@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import FormLogin from './form-login/FormLogin';
 import IntroductionContent from './introduction-content/introduction-content';
 /* eslint-disable-next-line */
 export interface EnvelopeLoginProps {}
@@ -8,7 +9,7 @@ const StyledEnvelopeLogin = styled.div`
   height: 100vh;
   margin: 0;
   background-color: white;
-  .content {
+  .section {
     flex: 1;
   }
 `;
@@ -16,10 +17,12 @@ const StyledEnvelopeLogin = styled.div`
 export function EnvelopeLogin(props: EnvelopeLoginProps) {
   return (
     <StyledEnvelopeLogin>
-      <div className="content">
+      <div className="section">
         <IntroductionContent />
       </div>
-      <div className="content"></div>
+      <div className="section">
+        <FormLogin />
+      </div>
     </StyledEnvelopeLogin>
   );
 }

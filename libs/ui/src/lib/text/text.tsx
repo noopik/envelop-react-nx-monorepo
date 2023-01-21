@@ -5,8 +5,8 @@ import { colors } from '@nx-test-zog/ui';
 export interface TextProps {
   children: React.ReactNode;
   className?: string;
-  color: 'primary' | 'secondary' | 'brand';
-  fontWeight?: 'regular' | 'medium' | 'bold';
+  color: 'primary' | 'secondary' | 'brand' | 'secondary-brand' | 'black';
+  fontWeight?: 'regular' | 'medium' | 'semibold' | 'bold';
   fontSize: number;
 }
 
@@ -48,6 +48,10 @@ const StyledText = styled.p.attrs((props: TextProps) => props)`
         return colors.text.secondary;
       case 'brand':
         return colors.brand;
+      case 'secondary-brand':
+        return colors.secondaryBrand;
+      case 'black':
+        return '#1E1E1E';
       default:
         return colors.text.primary;
     }
@@ -59,6 +63,8 @@ const StyledText = styled.p.attrs((props: TextProps) => props)`
         return 400;
       case 'medium':
         return 500;
+      case 'semibold':
+        return 600;
       case 'bold':
         return 700;
       default:

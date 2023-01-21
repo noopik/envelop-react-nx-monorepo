@@ -56,11 +56,23 @@ const StyledButton = styled.button.attrs((props: ButtonProps) => props)`
     switch (size) {
       case 'small':
         return `
-          width: 64px;
+          width: 100px;
         `;
       case 'medium':
         return `
           width: 200px;
+        `;
+      default:
+        break;
+    }
+  }}
+  /* Variant style condition */
+  ${({ colorScheme }) => {
+    switch (colorScheme) {
+      case 'blue':
+        return `
+          background-color: ${colors.brand};
+          color: ${colors.text.primary};
         `;
       default:
         break;

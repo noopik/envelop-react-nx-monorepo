@@ -32,7 +32,7 @@ const StyledIntroductionContent = styled.div`
 export function IntroductionContent(props: IntroductionContentProps) {
   return (
     <StyledIntroductionContent>
-      <Text color="primary" fontWeight="bold" fontSize={35}>
+      <Text color="primary" fontWeight="bold" fontSize={18}>
         Envelop
       </Text>
       <div className="introduction-wrapper">
