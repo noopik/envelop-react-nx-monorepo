@@ -21,7 +21,7 @@ describe('App', () => {
       </BrowserRouter>
     );
 
-    let href = getByText(/Login Page/i).getAttribute('href');
+    const href = getByText(/Login Page/i).getAttribute('href');
     expect(href).toBe('/login');
   });
 });
