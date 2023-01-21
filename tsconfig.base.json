@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-test-zog/envelope/login": ["libs/envelope/login/src/index.ts"],
+      "@nx-test-zog/envelope/register": ["libs/envelope/register/src/index.ts"],
+      "@nx-test-zog/ui": ["libs/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

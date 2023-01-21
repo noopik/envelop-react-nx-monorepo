@@ -1,15 +1,27 @@
 import { render } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 
 import App from './app';
 
 describe('App', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<App />);
+    const { baseElement } = render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+
     expect(baseElement).toBeTruthy();
   });
 
-  it('should have a greeting as the title', () => {
-    const { getByText } = render(<App />);
-    expect(getByText(/Welcome envelope/gi)).toBeTruthy();
+  it('should have a href to login page', () => {
+    const { getByText } = render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+
+    let href = getByText(/Login Page/i).getAttribute('href');
+    expect(href).toBe('/login');
   });
 });
