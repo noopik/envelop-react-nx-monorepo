@@ -8,6 +8,7 @@ export interface ButtonProps {
   variant?: 'solid' | 'outlined';
   size: 'small' | 'medium' | 'large';
   onClick: () => void;
+  icon?: React.ReactNode;
 }
 
 const defaultProps: ButtonProps = {
@@ -21,11 +22,19 @@ export function Button({
   variant,
   size,
   onClick,
+  icon,
   ...props
 }: ButtonProps) {
   return (
-    <StyledButton variant={variant} size={size} onClick={onClick} {...props}>
+    <StyledButton
+      variant={variant}
+      size={size}
+      onClick={onClick}
+      icon={icon}
+      {...props}
+    >
       {children}
+      {icon}
     </StyledButton>
   );
 }
@@ -87,6 +96,17 @@ const StyledButton = styled.button.attrs((props: ButtonProps) => props)`
         `;
       default:
         break;
+    }
+  }}
+  /* Button with icon style condition */
+  ${({ icon }) => {
+    if (icon) {
+      return `
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    `;
     }
   }}
 `;

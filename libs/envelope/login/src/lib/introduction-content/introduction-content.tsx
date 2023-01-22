@@ -1,5 +1,6 @@
 import { Button, Heading, Text } from '@nx-test-zog/ui';
 import styled from 'styled-components';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 /* eslint-disable-next-line */
 export interface IntroductionContentProps {}
@@ -22,7 +23,8 @@ const StyledIntroductionContent = styled.div`
         text-align: center;
       }
       .btn-wrapper {
-        text-align: center;
+        display: flex;
+        justify-content: center;
         margin-top: 1rem;
       }
     }
@@ -50,7 +52,11 @@ export function IntroductionContent(props: IntroductionContentProps) {
             </Text>
           </div>
           <div className="btn-wrapper">
-            <Button variant="outlined" size="medium">
+            <Button
+              variant="outlined"
+              size="medium"
+              icon={<FaExternalLinkAlt />}
+            >
               View Report
             </Button>
           </div>
