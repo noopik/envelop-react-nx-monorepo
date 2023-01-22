@@ -46,6 +46,7 @@ const StyledInput = styled.div.attrs((props: InputProps) => props)`
     padding: 8px 14px;
     font: inherit;
     font-size: 1rem;
+    box-sizing: border-box;
     &:focus {
       outline-color: ${colors.brand};
     }
