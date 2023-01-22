@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Text } from '@nx-test-zog/ui';
+import { Link as LinkRouter } from 'react-router-dom';
 
 /* eslint-disable-next-line */
 export interface LinkProps {
@@ -7,7 +8,7 @@ export interface LinkProps {
   children: React.ReactNode;
 }
 
-const StyledLink = styled.a`
+const StyledLink = styled(LinkRouter)`
   color: inherit;
   text-decoration: inherit;
   &:hover {
@@ -17,7 +18,7 @@ const StyledLink = styled.a`
 
 export function Link({ href, children, ...props }: LinkProps) {
   return (
-    <StyledLink href={href} {...props}>
+    <StyledLink to={href} {...props}>
       <Text color="brand" fontSize={12}>
         {children}
       </Text>

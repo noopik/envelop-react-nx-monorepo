@@ -8,7 +8,7 @@ export interface InputProps {
   onChange?: (value: any) => void;
   name: string;
   type: 'text' | 'password';
-  onError?: boolean;
+  error?: boolean | undefined;
   errorMessage?: string;
 }
 
@@ -25,14 +25,14 @@ export function Input({
   name,
   type,
   onChange,
-  onError,
+  error,
   errorMessage,
 }: InputProps) {
   return (
-    <StyledInput onError={onError}>
+    <StyledInput error={error}>
       <label htmlFor={id}>{label}</label>
       <input id={id} name={name} type={type} onChange={onChange} />
-      {onError && <span>{errorMessage}</span>}
+      {error && <span>{errorMessage}</span>}
     </StyledInput>
   );
 }
@@ -59,8 +59,8 @@ const StyledInput = styled.div.attrs((props: InputProps) => props)`
     color: #6d7b90;
   }
 
-  ${({ onError }) => {
-    if (onError) {
+  ${({ error }) => {
+    if (error) {
       return `
         label {
           color: red;

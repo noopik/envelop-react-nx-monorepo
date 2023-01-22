@@ -23,7 +23,7 @@ TextError.args = {
   id: 'label',
   name: 'label',
   type: 'text',
-  onError: true,
+  error: true,
   errorMessage: 'This is error message',
 };
 

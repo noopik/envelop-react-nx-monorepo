@@ -18,12 +18,13 @@ export interface UseFormLogin {
 
 const loginUser = (user: FormLogin): any => {
   console.log(LOGIN_KEY, user);
+  window.alert(`Wellcome to the club, ${user.email}!`);
   // axios.post<FormLogin>('http://localhost:4300/api/login', user);
 };
 
 export function useFormLogin(): UseFormLogin {
   const queryClient = useQueryClient();
-  const [error, setOnError] = useState<onErrorFormLogin>(initialErrorFormLogin);
+  const [error, setError] = useState<onErrorFormLogin>(initialErrorFormLogin);
 
   const [form, setForm] = useState<FormLogin>(initialPropsFormLogin);
   const { isLoading, mutate } = useMutation(loginUser, {
@@ -44,13 +45,13 @@ export function useFormLogin(): UseFormLogin {
 
   const onSubmit = () => {
     if (!form?.email || !form.password) {
-      return setOnError((prevState) => ({
+      return setError((prevState) => ({
         ...prevState,
         email: !form?.email ? true : false,
         password: !form?.password ? true : false,
       }));
     }
-    setOnError(initialErrorFormLogin);
+    setError(initialErrorFormLogin);
 
     mutate(form);
   };

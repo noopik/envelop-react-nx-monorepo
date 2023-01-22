@@ -66,7 +66,7 @@ export function FormLogin(props: FormLoginProps) {
               name="email"
               type="text"
               onChange={handleInput}
-              onError={error['email']}
+              error={error['email']}
               errorMessage="Email is required"
             />
           </div>
@@ -77,7 +77,7 @@ export function FormLogin(props: FormLoginProps) {
               name="password"
               type="password"
               onChange={handleInput}
-              onError={error['password']}
+              error={error['password']}
               errorMessage="Password is required"
             />
           </div>
