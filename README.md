@@ -15,7 +15,7 @@
                 <a href="#build-with">Build With</a>
             </li>
             <li>
-                <a href="#completed-requirements">Completed requirements</a>
+                <a href="#progress-report">Completed requirements</a>
             </li>
         </ol>
     </li>
@@ -26,7 +26,7 @@
           <a href="#installation">Installation</a>
         </li>
         <li>
-          <a href="#prerequisites">Prerequisites</a>
+          <a href="running-application">Running application</a>
         </li>
       </ol>
     </li>
@@ -62,7 +62,7 @@ testing.
 This is an example of how to list things you need to use the software and how to install them.
 * [Node Js](https://nodejs.org/en/download/)
 
-### Installation
+### installation
 1. Clone repository
 ```sh
 https://github.com/noopik/fe-product-engineer-test.git
@@ -76,12 +76,12 @@ cd fe-product-engineer-test
 npm install
 ```
 
-### Running application development server
+### Running application 
 1. Run `nx serve envelope` or `npx nx serve envelope` for a dev server. 
 2. Navigate to http://localhost:4200/. 
 3. The app will automatically reload if you change any of the source files.
 
-### Running Storybook development server
+### Running Storybook 
 1. Run `nx storybook storybook-host` or `npx nx storybook storybook-host` for a dev server. 
 2. Navigate to http://localhost:4400/. 
 3. The app will automatically reload if you change any of the source files.
