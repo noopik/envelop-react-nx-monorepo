@@ -3,7 +3,7 @@ import { Heading } from './heading';
 
 const Story: ComponentMeta<typeof Heading> = {
   component: Heading,
-  title: 'Heading',
+  title: 'Design System / UI / Heading',
 };
 export default Story;
 
@@ -12,4 +12,11 @@ const Template: ComponentStory<typeof Heading> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+
+Primary.args = {
+  children: 'Introducing our 2020 report',
+};
+
+Primary.parameters = {
+  backgrounds: { default: 'envelope' },
+};

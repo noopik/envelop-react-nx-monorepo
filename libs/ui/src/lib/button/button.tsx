@@ -31,15 +31,17 @@ export function Button({
 }
 
 const StyledButton = styled.button.attrs((props: ButtonProps) => props)`
+  border: 0px;
   border-radius: 5px;
   font: inherit;
   padding: 12px;
+  outline: none;
   &:hover {
     cursor: pointer;
     opacity: 0.8;
   }
   /* Variant style condition */
-  ${({ variant, size }) => {
+  ${({ variant }) => {
     switch (variant) {
       case 'outlined':
         return `
@@ -65,6 +67,11 @@ const StyledButton = styled.button.attrs((props: ButtonProps) => props)`
       case 'medium':
         return `
           width: 200px;
+        `;
+      case 'large':
+        return `
+          width: 300px;
+          height: 42px;
         `;
       default:
         break;

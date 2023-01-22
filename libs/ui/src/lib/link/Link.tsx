@@ -8,6 +8,8 @@ export interface LinkProps {
 }
 
 const StyledLink = styled.a`
+  color: inherit;
+  text-decoration: inherit;
   &:hover {
     opacity: 0.8;
   }
