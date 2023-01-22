@@ -34,6 +34,10 @@ const StyledButton = styled.button.attrs((props: ButtonProps) => props)`
   border-radius: 5px;
   font: inherit;
   padding: 12px;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
   /* Variant style condition */
   ${({ variant, size }) => {
     switch (variant) {

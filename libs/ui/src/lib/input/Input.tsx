@@ -6,9 +6,38 @@ export interface InputProps {
   label: string;
   id: string;
   onChange?: (value: any) => void;
+  name: string;
+  type: 'text' | 'password';
+  onError?: boolean;
+  errorMessage?: string;
 }
 
-const StyledInput = styled.div`
+const defaultProps: InputProps = {
+  type: 'text',
+  name: '',
+  id: '',
+  label: '',
+};
+
+export function Input({
+  label,
+  id,
+  name,
+  type,
+  onChange,
+  onError,
+  errorMessage,
+}: InputProps) {
+  return (
+    <StyledInput onError={onError}>
+      <label htmlFor={id}>{label}</label>
+      <input id={id} name={name} type={type} onChange={onChange} />
+      {onError && <span>{errorMessage}</span>}
+    </StyledInput>
+  );
+}
+
+const StyledInput = styled.div.attrs((props: InputProps) => props)`
   position: relative;
   input {
     border: 1px solid #dfe5ec;
@@ -28,15 +57,27 @@ const StyledInput = styled.div`
     left: 1rem;
     color: #6d7b90;
   }
+
+  ${({ onError }) => {
+    if (onError) {
+      return `
+        label {
+          color: red;
+        }
+        input {
+          border: 1px solid red;
+        }
+        span {
+          margin: 8px 0 0 0;
+          font-size: 12px;
+          color: red;
+        }
+        
+      `;
+    }
+  }}
 `;
 
-export function Input({ label, id, onChange }: InputProps) {
-  return (
-    <StyledInput>
-      <label>{label}</label>
-      <input id={id} onChange={onChange} />
-    </StyledInput>
-  );
-}
+Input.defaultProps = defaultProps;
 
 export default Input;

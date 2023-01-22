@@ -1,26 +1,12 @@
-import styled from 'styled-components';
-import { Route, Routes, Link } from 'react-router-dom';
-import { EnvelopeRegister } from '@nx-test-zog/envelope/register';
-import { EnvelopeLogin } from '@nx-test-zog/envelope/login';
-
-const StyledApp = styled.div``;
+import { QueryClient, QueryClientProvider } from 'react-query';
+import Routes from './routes/Routes';
 
 export function App() {
+  const queryClient = new QueryClient();
   return (
-    <StyledApp>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              <Link to="/login">Login Page</Link>
-            </div>
-          }
-        />
-        <Route path="/login" element={<EnvelopeLogin />} />
-        <Route path="/register" element={<EnvelopeRegister />} />
-      </Routes>
-    </StyledApp>
+    <QueryClientProvider client={queryClient}>
+      <Routes />
+    </QueryClientProvider>
   );
 }
 

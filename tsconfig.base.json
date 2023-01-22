@@ -17,6 +17,8 @@
     "paths": {
       "@nx-test-zog/envelope/login": ["libs/envelope/login/src/index.ts"],
       "@nx-test-zog/envelope/register": ["libs/envelope/register/src/index.ts"],
+      "@nx-test-zog/hooks": ["libs/hooks/src/index.ts"],
+      "@nx-test-zog/shared-types": ["libs/shared-types/src/index.ts"],
       "@nx-test-zog/ui": ["libs/ui/src/index.ts"]
     }
   },
