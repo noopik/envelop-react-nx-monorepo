@@ -1,6 +1,7 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { FormLogin } from './FormLogin';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { BrowserRouter } from 'react-router-dom';
 
 const Story: ComponentMeta<typeof FormLogin> = {
   component: FormLogin,
@@ -13,7 +14,9 @@ const Template: ComponentStory<typeof FormLogin> = (args) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <FormLogin {...args} />
+      <BrowserRouter>
+        <FormLogin {...args} />
+      </BrowserRouter>
     </QueryClientProvider>
   );
 };
