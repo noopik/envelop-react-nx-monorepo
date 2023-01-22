@@ -26,7 +26,7 @@
           <a href="#installation">Installation</a>
         </li>
         <li>
-          <a href="running-application">Running application</a>
+          <a href="#running-application">Running application</a>
         </li>
       </ol>
     </li>
@@ -60,7 +60,7 @@ testing.
 
 ### Prerequisites
 This is an example of how to list things you need to use the software and how to install them.
-* [Node Js](https://nodejs.org/en/download/)
+* [Node Js ^18.12.0](https://nodejs.org/en/download/)
 
 ### installation
 1. Clone repository
