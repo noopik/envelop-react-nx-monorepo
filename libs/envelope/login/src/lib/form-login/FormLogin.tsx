@@ -1,4 +1,12 @@
-import { Button, Card, Heading, Input, Link, Text } from '@nx-test-zog/ui';
+import {
+  breakpoints,
+  Button,
+  Card,
+  Heading,
+  Input,
+  Link,
+  Text,
+} from '@nx-test-zog/ui';
 import styled from 'styled-components';
 import useFormLogin from '../../hooks/use-form-login/use-form-login';
 
@@ -27,6 +35,17 @@ const StyledFormLogin = styled.div`
       }
     }
   }
+
+  ${breakpoints.lessThan('smartphone')`
+     padding-top: 2rem;
+  `};
+
+  ${breakpoints.lessThan('phone')`
+     .action-wrapper {
+        flex-direction:column;
+        gap: 1rem;
+      }
+  `};
 `;
 export function FormLogin(props: FormLoginProps) {
   const { error, handleInput, onSubmit, isLoading } = useFormLogin();

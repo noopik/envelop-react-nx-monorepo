@@ -6,3 +6,4 @@ export * from './lib/button/button';
 export * from './lib/heading/heading';
 export * from './lib/text/text';
 export * from './assets/index';
+export * from './lib/breakpoints/breakpoints';

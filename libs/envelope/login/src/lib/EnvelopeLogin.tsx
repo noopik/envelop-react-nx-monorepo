@@ -1,3 +1,4 @@
+import { breakpoints } from '@nx-test-zog/ui';
 import styled from 'styled-components';
 import FormLogin from './form-login/FormLogin';
 import IntroductionContent from './introduction-content/introduction-content';
@@ -12,6 +13,11 @@ const StyledEnvelopeLogin = styled.div`
   .section {
     flex: 1;
   }
+  ${breakpoints.lessThan('smartphone')`
+    flex-direction: column;
+    height: max-content;
+    margin-bottom: 2rem;
+  `};
 `;
 
 export function EnvelopeLogin(props: EnvelopeLoginProps) {

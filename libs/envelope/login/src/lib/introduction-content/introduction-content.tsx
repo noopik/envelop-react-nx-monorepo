@@ -1,4 +1,4 @@
-import { Button, Heading, Text } from '@nx-test-zog/ui';
+import { breakpoints, Button, Heading, Text } from '@nx-test-zog/ui';
 import styled from 'styled-components';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
@@ -29,6 +29,10 @@ const StyledIntroductionContent = styled.div`
       }
     }
   }
+  ${breakpoints.lessThan('phone')`
+    padding: 26px;
+    height: 50vh;
+  `};
 `;
 
 export function IntroductionContent(props: IntroductionContentProps) {
