@@ -48,7 +48,6 @@
 ### Progress report
 - [x] Use TypeScript and React
 - [x] Use Styled-component
-- [x] Use Styled-component
 - [x] Use custom hooks and react-query
 - [x] Setting up application using Nx
 - [x] Creating a Storybook component
@@ -65,7 +64,7 @@ This is an example of how to list things you need to use the software and how to
 ### installation
 1. Clone repository
 ```sh
-https://github.com/noopik/fe-product-engineer-test.git
+git clone https://github.com/noopik/fe-product-engineer-test.git
 ```
 2. Go To Folder Repo
 ```sh
