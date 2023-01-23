@@ -85,6 +85,9 @@ npm install
 2. Navigate to http://localhost:4400/. 
 3. The app will automatically reload if you change any of the source files.
 
+### Running Testing 
+Run `nx run-many --all --target=test --parallel` or `npx nx run-many --all --target=test --parallel`
+
 ### Graph Relationship Projects
 
 Run `nx graph` to see a diagram of the dependencies of the projects.
