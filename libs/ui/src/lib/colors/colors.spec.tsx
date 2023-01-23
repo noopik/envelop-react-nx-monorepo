@@ -1,10 +1,7 @@
-import { render } from '@testing-library/react';
-
-import Colors from './colors';
+import { colors } from './colors';
 
 describe('Colors', () => {
-  it('should render successfully', () => {
-    const { baseElement } = render(<Colors />);
-    expect(baseElement).toBeTruthy();
+  it('should return example color brand successfully', () => {
+    expect(colors.brand).toBeTruthy();
   });
 });
