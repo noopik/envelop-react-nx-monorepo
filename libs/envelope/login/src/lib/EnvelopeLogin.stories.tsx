@@ -1,6 +1,7 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { EnvelopeLogin } from './EnvelopeLogin';
+import { BrowserRouter } from 'react-router-dom';
 
 const Story: ComponentMeta<typeof EnvelopeLogin> = {
   component: EnvelopeLogin,
@@ -13,7 +14,9 @@ const Template: ComponentStory<typeof EnvelopeLogin> = (args) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <EnvelopeLogin {...args} />
+      <BrowserRouter>
+        <EnvelopeLogin {...args} />
+      </BrowserRouter>
     </QueryClientProvider>
   );
 };
